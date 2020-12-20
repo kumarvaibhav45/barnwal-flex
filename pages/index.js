@@ -100,12 +100,12 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const { gifts } = await require('../data/gifts.json')
-  const { clients } = await require('../data/clients.json')
-  const { members } = await require('../data/members.json')
-  const { services } = await require('../data/services.json')
-  const { funFacts1 } = await require('../data/fun-facts.json')
-  const { works } = await require('../data/works.json')
+  const { gifts } = await require('../public/data/gifts.json')
+  const { clients } = await require('../public/data/clients.json')
+  const { members } = await require('../public/data/members.json')
+  const { services } = await require('../public/data/services.json')
+  const { funFacts1 } = await require('../public/data/fun-facts.json')
+  const { works } = await require('../public/data/works.json')
 
   return {
     props: {

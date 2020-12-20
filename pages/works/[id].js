@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const workData = await getWorkData(params.id)
-  const { funFacts2 } = await require('../../data/fun-facts.json')
+  const { funFacts2 } = await require('../../public/data/fun-facts.json')
   return {
     props: {
       workData,
