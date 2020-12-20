@@ -1,0 +1,149 @@
+{
+  "works": [
+    {
+      "id": 1,
+      "img": "/assets/images/works/steel-letter.png",
+      "title": "Steel letters",
+      "pageTitle": "steel-letters",
+      "album": [
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/steel-letter.png",
+          "title": "Steel letters"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "img": "/assets/images/works/vinyl-glass.png",
+      "title": "Vinyle & glass film",
+      "pageTitle": "vinyl-&-glass-film",
+      "album": [
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "img": "/assets/images/works/arcylic-led.png",
+      "title": "Arcylic and led letter",
+      "pageTitle": "arcylic-and-led-letter",
+      "album": [
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "img": "/assets/images/works/offset-print.png",
+      "title": "Offset digital print",
+      "pageTitle": "offset-digital-print",
+      "album": [
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "img": "/assets/images/works/steel-letter.png",
+      "title": "Hl",
+      "pageTitle": "hl",
+      "album": [
+        {
+          "id": "1.1",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.2",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        },
+        {
+          "id": "1.3",
+          "img": "/assets/images/works/vinyl-glass.png",
+          "title": "Steel letters"
+        }
+      ]
+    }
+  ]
+}

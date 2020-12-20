@@ -1,0 +1,61 @@
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.scrolled > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  margin-top: 0px;
+}
+
+.menu-icon:hover img {
+  -webkit-filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(124%) contrast(97%);
+}
+.scrolled {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+
+@media (max-width: 1150px) {
+  .nav {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    transform-origin: top;
+    top: 72px;
+    margin-top: 0;
+    padding: 0 10% 8px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .nav.hide {
+    transform: scaleY(0);
+    box-shadow: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@media (min-width: 1150px) {
+  .scrolled {
+    height: 60px;
+    padding: 15px 0;
+  }
+  .scrolled > div {
+    height: 30px;
+  }
+  .scrolled nav {
+    margin-top: 0;
+    padding-top: 2px;
+  }
+}
+
+@media (min-width: 1550px) {
+  .largeScreenHeader {
+    width: 65%;
+    color: red;
+  }
+}

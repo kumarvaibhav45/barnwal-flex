@@ -1,0 +1,54 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client2.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client3.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client3.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client2.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client3.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client2.png"
+    },
+    {
+      "id": 1,
+      "title": "",
+      "img": "/assets/images/clients/client.png"
+    }
+  ]
+}

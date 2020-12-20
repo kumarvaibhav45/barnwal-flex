@@ -1,0 +1,86 @@
+import { useRef, forwardRef } from 'react'
+import Link from 'next/link'
+import Slider from 'react-slick'
+import styles from '../styles/banner.module.css'
+
+const Slide = ({ text, banner, fullBanner }) => {
+  return (
+    <div>
+      <div
+        className={`${
+          fullBanner ? styles.fullBanner : styles.banner
+        } flex flex-col justify-center items-center`}
+        style={{ backgroundImage: `url(${banner})` }}
+      >
+        <div className={`flex flex-col justify-center items-center`}>
+          <h1 className='px-2 py-1 text-2xl text-center w-10/12 uppercase text-white font-sansBold text-extraBold border border-white sm:text-3xl sm:w-auto sm:py-1.5 sm:px-3 md:text-4xl lg:text-5xl lg:px-8 lg:py-4'>
+            {text}
+          </h1>
+          <div className='mt-6 group lg:mt-8'>
+            <Link href='/#contact'>
+              <a className='px-3.5 py-2.5 uppercase text-xs font-sansBold rounded text-white bg-btnOrange hover:underline focus:underline sm:px-4 lg:text-sm lg:px-6 lg:py-3'>
+                Request a quote
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const CarouselButton = ({ onClickHandler }) => (
+  <button
+    className='w-4 h-1 border border-white hover:bg-white mr-1 focus:outline-none lg:w-6 lg:h-1.5 lg:mr-1.5'
+    onClick={() => {
+      if (onClickHandler) {
+        onClickHandler()
+      }
+    }}
+  ></button>
+)
+
+const Banner = forwardRef((props, ref) => {
+  const settings = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 300,
+    autoplaySpeed: 6000,
+    cssEase: 'linear',
+    pauseOnHover: false,
+  }
+  const sliderRef = useRef(null)
+  const { fullBanner } = props
+  return (
+    <div
+      id='home'
+      ref={ref}
+      className={`${
+        fullBanner ? styles.fullHome : styles.home
+      } relative mx-auto lg:pt-4`}
+    >
+      <Slider {...settings} ref={sliderRef}>
+        <Slide
+          text='An agency dedicated to serve brands'
+          banner='/assets/images/banner1.png'
+          fullBanner={fullBanner}
+        />
+        <Slide
+          text='We foster dynamic business'
+          banner='/assets/images/banner2.png'
+          fullBanner={fullBanner}
+        />
+      </Slider>
+      <div className='absolute bottom-3 left-1/2 transform -translate-x-1/2'>
+        <CarouselButton onClickHandler={sliderRef?.current?.slickPrev} />
+        <CarouselButton onClickHandler={sliderRef?.current?.slickNext} />
+      </div>
+    </div>
+  )
+})
+
+export default Banner

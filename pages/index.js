@@ -1,65 +1,120 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useEffect, useState, useRef } from 'react'
+import Layout from '../components/layout'
+import Banner from '../components/banner'
+import About from '../components/about/about'
+import Works from '../components/work/works'
+import Team from '../components/team/team'
+import Clients from '../components/clients/clients'
+import Services from '../components/services/services'
+import GiftsForAll from '../components/gifts/gifts-for-all'
+import Contact from '../components/contact/contact'
 
-export default function Home() {
+export default function Home({
+  gifts,
+  clients,
+  services,
+  members,
+  works = [],
+  funFacts1,
+}) {
+  const [visibleSection, setVisibleSection] = useState('')
+  const [scrolled, setScrolled] = useState(false)
+  const [fullBanner, setFullBanner] = useState(false)
+  const [screenSize, setScreenSize] = useState('')
+
+  const homeRef = useRef(null)
+  const aboutRef = useRef(null)
+  const workRef = useRef(null)
+  const servicesRef = useRef(null)
+  const giftsRef = useRef(null)
+  const clientsRef = useRef(null)
+  const contactRef = useRef(null)
+
+  const sectionRefs = [
+    { section: 'home', ref: homeRef },
+    { section: 'about', ref: aboutRef },
+    { section: 'work', ref: workRef },
+    { section: 'services', ref: servicesRef },
+    { section: 'gifts', ref: giftsRef },
+    { section: 'clients', ref: clientsRef },
+    { section: 'contact', ref: contactRef },
+  ]
+
+  useEffect(() => {
+    const setScreen = () => {
+      if(window.innerWidth < 620) {
+        setScreenSize('xs')
+      } else if(window.innerWidth < 840) {
+        setScreenSize('sm')
+      } else if(window.innerWidth < 1150) {
+        setScreenSize('md')
+      } else {
+        setScreenSize('lg')
+      }
+      window.innerWidth > window.innerHeight && setFullBanner(true)
+    }
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      if (scrollPosition > 100) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+    let options = {
+      root: null,
+      threshold: 0.9,
+    }
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleSection(entry.target.id)
+        }
+      })
+    }
+    const observer = new IntersectionObserver(callback, options)
+    sectionRefs.forEach(({ ref }) => observer.observe(ref.current))
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', setScreen)
+    setScreen()
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', setScreen)
+      sectionRefs.forEach(
+        ({ ref }) => ref.current && observer.unobserve(ref.current)
+      )
+    }
+  }, [sectionRefs])
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Layout scrolled={scrolled} visibleSection={visibleSection}>
+      <Banner ref={homeRef} fullBanner={fullBanner} />
+      <About ref={aboutRef} />
+      <Team members={members} />
+      <Clients ref={clientsRef} clients={clients} screenSize={screenSize} />
+      <Works ref={workRef} works={works} funFacts={funFacts1} />
+      <Services ref={servicesRef} services={services} screenSize={screenSize} />
+      <GiftsForAll ref={giftsRef} gifts={gifts} />
+      <Contact ref={contactRef} />
+    </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const { gifts } = await require('../data/gifts.json')
+  const { clients } = await require('../data/clients.json')
+  const { members } = await require('../data/members.json')
+  const { services } = await require('../data/services.json')
+  const { funFacts1 } = await require('../data/fun-facts.json')
+  const { works } = await require('../data/works.json')
+
+  return {
+    props: {
+      gifts,
+      clients,
+      works,
+      members,
+      services,
+      funFacts1,
+    },
+  }
 }
