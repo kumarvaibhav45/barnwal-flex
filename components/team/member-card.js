@@ -7,7 +7,7 @@ const MemberCard = ({ img, name, designation, message }) => {
     <div className='flex flex-col text-center'>
       <Popup
         trigger={
-          <div className="w-max mx-auto">
+          <div className="w-auto mx-auto">
             <ZoomCard img={img} title={name} width='340' height='226' />
           </div>
         }
