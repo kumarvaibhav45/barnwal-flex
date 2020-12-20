@@ -1,6 +1,6 @@
 import ZoomCard from '../zoom-card'
 import Popup from 'reactjs-popup'
-import Image from 'next/image'
+import PopupModel from '../popup-model.js'
 
 const GiftCard = ({ img, title }) => (
   <div className='flex flex-col text-center'>
@@ -14,25 +14,7 @@ const GiftCard = ({ img, title }) => (
       modal
     >
       {(close) => (
-        <div className='flex flex-col'>
-          <Image
-            src={img}
-            width={500}
-            height={500}
-            alt={title}
-            objectFit='contain'
-            unoptimized={true}
-          />
-          <div className='flex justify-between mt-1 text-sm'>
-            <p>{title}</p>
-            <button
-              onClick={close}
-              className='text-sm border border-black hover:bg-black  hover:text-white px-1.5 transition-all duration-100'
-            >
-              &times;
-            </button>
-          </div>
-        </div>
+        <PopupModel img={img} title={title} close={close} width={500} height={500} />
       )}
     </Popup>
 

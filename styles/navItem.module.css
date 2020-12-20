@@ -14,3 +14,7 @@
 .NavItem.selected > span {
   border-bottom-color: #fe1717;
 }
+
+.NavItem:last-child {
+  border-bottom: none;
+}

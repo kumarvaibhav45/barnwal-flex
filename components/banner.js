@@ -29,21 +29,10 @@ const Slide = ({ text, banner, fullBanner }) => {
   )
 }
 
-const CarouselButton = ({ onClickHandler }) => (
-  <button
-    className='w-4 h-1 border border-white hover:bg-white mr-1 focus:outline-none lg:w-6 lg:h-1.5 lg:mr-1.5'
-    onClick={() => {
-      if (onClickHandler) {
-        onClickHandler()
-      }
-    }}
-  ></button>
-)
-
 const Banner = forwardRef((props, ref) => {
   const settings = {
     arrows: false,
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -52,6 +41,14 @@ const Banner = forwardRef((props, ref) => {
     autoplaySpeed: 6000,
     cssEase: 'linear',
     pauseOnHover: false,
+    appendDots: (dots) => (
+      <div style={{ position: 'absolute', bottom: '10px' }}>
+        <ul className='m-0'> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div className='w-4 h-1 border border-white hover:bg-white mr-1 focus:outline-none lg:w-6 lg:h-1.5 lg:mr-1.5'></div>
+    ),
   }
   const sliderRef = useRef(null)
   const { fullBanner } = props
@@ -75,10 +72,6 @@ const Banner = forwardRef((props, ref) => {
           fullBanner={fullBanner}
         />
       </Slider>
-      <div className='absolute bottom-3 left-1/2 transform -translate-x-1/2'>
-        <CarouselButton onClickHandler={sliderRef?.current?.slickPrev} />
-        <CarouselButton onClickHandler={sliderRef?.current?.slickNext} />
-      </div>
     </div>
   )
 })

@@ -12,12 +12,12 @@ export default function ServicesSlider({ services, screen }) {
     slidesToScroll: slidesToShow,
     slidesToShow: slidesToShow,
     appendDots: (dots) => (
-      <div className='p-10'>
+      <div style={{ marginBottom: '-10px' }}>
         <ul className='m-0'> {dots} </ul>
       </div>
     ),
     customPaging: (i) => (
-      <div className='w-6 h-6 text-sm pt-0.5 text-darkGray border border-darkGray'>
+      <div className='w-6 h-6 text-sm pt-0.5 text-textBlack border border-darkGray'>
         {i + 1}
       </div>
     ),

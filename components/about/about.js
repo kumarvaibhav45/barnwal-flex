@@ -25,7 +25,7 @@ const About = forwardRef((props, ref) => {
           </div>
           <div className='seperator w-full h-px bg-seperator'></div>
           <div>
-          <AboutCard heading="ABOUT US" text={`Moon Advertisment was built on the platform of highest quality standards, with the intent of providing world class products and solutions to the printing industry in India. We are one of the undisputed market leader in the printing industry that has transformed the industry from merely utilitarian to inspirational. With the company's vision to evolve in a 'Complete Printing Solution' We have successfully diversified
+          <AboutCard heading="ABOUT US" text={`Barnwal Flex was built on the platform of highest quality standards, with the intent of providing world class products and solutions to the printing industry in India. We are one of the undisputed market leader in the printing industry that has transformed the industry from merely utilitarian to inspirational. With the company's vision to evolve in a 'Complete Printing Solution' We have successfully diversified
                 into various Print vertical like Commercial Printing,
                 Publishing, Packaging, Signage, Offset Printing & Digital
                 printing. As a one window solution, we offer wide range of high

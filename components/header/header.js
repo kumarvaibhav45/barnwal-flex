@@ -4,6 +4,16 @@ import NavItem from './nav-item'
 import styles from '../../styles/header.module.css'
 import { useState } from 'react'
 
+const menuItem = [
+  { name: 'home', ref_id: 'home' },
+  { name: 'about', ref_id: 'about' },
+  { name: 'work', ref_id: 'work' },
+  { name: 'services', ref_id: 'services' },
+  { name: 'gifts for all', ref_id: 'gifts' },
+  { name: 'clients', ref_id: 'clients' },
+  { name: 'contact', ref_id: 'contact' },
+]
+
 const Header = ({ title, scrolled, visibleSection }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
@@ -47,48 +57,15 @@ const Header = ({ title, scrolled, visibleSection }) => {
               styles.nav
             } ${menuOpen ? '' : styles.hide}`}
           >
-            <NavItem
-              name='home'
-              ref_id='home'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
-            <NavItem
-              name='about'
-              ref_id='about'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
-            <NavItem
-              name='work'
-              ref_id='work'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
-            <NavItem
-              name='services'
-              ref_id='services'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
-            <NavItem
-              name='gifts for all'
-              ref_id='gifts'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
-            <NavItem
-              name='clients'
-              ref_id='clients'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
-            <NavItem
-              name='contact'
-              ref_id='contact'
-              visibleSection={visibleSection}
-              setMenuOpen={setMenuOpen}
-            />
+            {menuItem.map(({ name, ref_id }, i) => (
+              <NavItem
+                key={i}
+                name={name}
+                ref_id={ref_id}
+                visibleSection={visibleSection}
+                setMenuOpen={setMenuOpen}
+              />
+            ))}
           </nav>
         </div>
       </div>

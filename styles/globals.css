@@ -83,12 +83,6 @@ body {
   }
 }
 
-@media (max-width: 620px) {
-  .popup-content {
-    width: 80vw !important;
-  }
-}
-
 .modal {
   font-size: 12px;
 }
@@ -242,7 +236,14 @@ body {
   filter: brightness(1);
 }
 
+
+@media (max-width: 1120px) {
+  .popup-content {
+    max-width: 80vw;
+  }
+}
+
 .slick-dots ul li.slick-active > div {
-  color: white;
-  background-color: gray;
+  color: #333333;
+  background-color: white;
 }

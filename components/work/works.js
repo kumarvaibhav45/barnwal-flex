@@ -4,6 +4,7 @@ import FunFacts from './fun-facts'
 import ZoomCard from '../zoom-card'
 import Link from 'next/link'
 import Popup from 'reactjs-popup'
+import PopupModel from '../popup-model.js'
 import Image from 'next/image'
 
 const Works = forwardRef((props, ref) => {
@@ -43,25 +44,7 @@ const Works = forwardRef((props, ref) => {
                   modal
                 >
                   {(close) => (
-                    <div className='flex flex-col'>
-                      <Image
-                        src={img}
-                        width='800'
-                        height='628'
-                        alt={title}
-                        objectFit='contain'
-                        unoptimized={true}
-                      />
-                      <div className='flex justify-between mt-2 text-xs md:text-sm'>
-                        <p>{title}</p>
-                        <button
-                          onClick={close}
-                          className='text-sm border border-black hover:bg-black  hover:text-white px-1.5 transition-all duration-100'
-                        >
-                          &times;
-                        </button>
-                      </div>
-                    </div>
+                    <PopupModel img={img} title={title} close={close} width={800} height={628} />
                   )}
                 </Popup>
               )}

@@ -1,13 +1,13 @@
 import ZoomCard from '../zoom-card'
 import Popup from 'reactjs-popup'
-import Image from 'next/image'
+import PopupModel from '../popup-model.js'
 
 const MemberCard = ({ img, name, designation, message }) => {
   return (
     <div className='flex flex-col text-center'>
       <Popup
         trigger={
-          <div>
+          <div className="w-max mx-auto">
             <ZoomCard img={img} title={name} width='340' height='226' />
           </div>
         }
@@ -15,25 +15,7 @@ const MemberCard = ({ img, name, designation, message }) => {
         modal
       >
         {(close) => (
-          <div className='flex flex-col'>
-            <Image
-              src={img}
-              width={768}
-              height={556}
-              alt={name}
-              objectFit='fill'
-              unoptimized={true}
-            />
-            <div className='flex justify-between mt-2 text-xs md:text-sm'>
-              <p>{name}</p>
-              <button
-                onClick={close}
-                className='text-sm border border-black hover:bg-black  hover:text-white px-1.5 transition-all duration-100'
-              >
-                &times;
-              </button>
-            </div>
-          </div>
+          <PopupModel img={img} title={name} close={close} width={768} height={556} />
         )}
       </Popup>
 
