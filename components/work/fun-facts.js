@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer'
 const FunFacts = ({ title, funFacts }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.6,
+    threshold: 0.8,
   })
   return (
     <div className='section-container pb-0 mb-0 lg:mb-4' ref={ref}>

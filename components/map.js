@@ -6,26 +6,26 @@ export default function GoogleMap({ smallIcon }) {
   return (
     <div className='w-full'>
       <button
-        className='w-full border-0 bg-black text-white uppercase py-6 text-sm locate-us transition-all duration-250 ease hover:underline focus:outline-none sm:text-base md:text-xl lg:text-2xl'
+        className='w-full flex justify-center items-center py-6 border-0 bg-black text-white uppercase text-sm locate-us transition-all duration-250 ease hover:underline focus:outline-none sm:text-base md:text-xl lg:text-2xl'
         onClick={() => {
           setIsMapOpen(!isMapOpen)
         }}
       >
         Locate us on map
-        <span className='ml-1.5'>
+        <span className='ml-1.5 pt-1 pb-0'>
           {isMapOpen ? (
             <Image
               src='/assets/images/icons/angle-up.svg'
-              width={smallIcon ? '16' : '20'}
-              height={smallIcon ? '16' : '20'}
+              width={smallIcon ? '16' : '24'}
+              height={smallIcon ? '16' : '24'}
             />
           ) : (
             <Image
               src='/assets/images/icons/angle-down.svg'
-              width={smallIcon ? '16' : '20'}
-              height={smallIcon ? '16' : '20'}
+              width={smallIcon ? '16' : '24'}
+              height={smallIcon ? '16' : '24'}
             />
-          )}
+            )}
         </span>
       </button>
       <div

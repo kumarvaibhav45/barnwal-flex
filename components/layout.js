@@ -30,7 +30,7 @@ export default function Layout({
         visibleSection={visibleSection}
       />
       <main>{children}</main>
-      <GoogleMap smallIcon={true} />
+      <GoogleMap smallIcon={false} />
       <Footer />
     </>
   )

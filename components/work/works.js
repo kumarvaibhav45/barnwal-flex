@@ -5,7 +5,6 @@ import ZoomCard from '../zoom-card'
 import Link from 'next/link'
 import Popup from 'reactjs-popup'
 import PopupModel from '../popup-model.js'
-import Image from 'next/image'
 
 const Works = forwardRef((props, ref) => {
   const { works, funFacts, worksTitle = 'Our Work' } = props
@@ -17,13 +16,13 @@ const Works = forwardRef((props, ref) => {
         worksTitle === 'Our Work' ? 'bg-white' : 'bg-bgGray mt-10'
       }`}
     >
-      <div className=''>
+      <div>
         <SectionTitle name={worksTitle} />
         <div className='centered-container mt-12 grid grid-cols-1 gap-x-6 gap-y-6 sm:mt-20 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-2'>
           {works?.map(({ id, img, title, pageTitle = '' }) => (
             <div key={id} className='flex darker-overlay'>
               {pageTitle ? (
-                <Link href={`/works/${pageTitle}`}>
+                <Link href={`/works/${pageTitle}`} scroll={false}>
                   <a>
                     <ZoomCard img={img} text={title} width='800' height='628' />
                   </a>
@@ -44,7 +43,13 @@ const Works = forwardRef((props, ref) => {
                   modal
                 >
                   {(close) => (
-                    <PopupModel img={img} title={title} close={close} width={800} height={628} />
+                    <PopupModel
+                      img={img}
+                      title={title}
+                      close={close}
+                      width={800}
+                      height={628}
+                    />
                   )}
                 </Popup>
               )}

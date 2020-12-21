@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const ContactInfoItem = ({ icon, text, title, mail = false }) => (
   <li className='mb-4 flex items-baseline lg:mb-6'>
-    <div className='flex-shrink-0 block w-6 h-6 pt-0.5 text-center bg-white mr-2.5'>
+    <div className='flex-shrink-0 flex justify-center items-center w-6 h-6 text-center bg-white mr-2.5'>
       <Image src={icon} width='12' height='12' title={title} />
     </div>
     <div

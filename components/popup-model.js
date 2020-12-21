@@ -15,7 +15,7 @@ const PopupModel = ({ img, title, close, width, height }) => (
       <p>{title}</p>
       <button
         onClick={close}
-        className='text-sm rounded-none border border-black hover:bg-black  hover:text-white px-1.5 transition-all duration-100'
+        className='text-sm w-5 h-5 flex justify-center items-center rounded-none border border-black hover:bg-black  hover:text-white transition-all duration-100'
       >
         &times;
       </button>

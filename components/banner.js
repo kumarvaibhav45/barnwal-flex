@@ -18,7 +18,7 @@ const Slide = ({ text, banner, fullBanner }) => {
           </h1>
           <div className='mt-6 group lg:mt-8'>
             <Link href='/#contact'>
-              <a className='px-3.5 py-2.5 uppercase text-xs font-sansBold rounded text-white bg-btnOrange hover:underline focus:underline sm:px-4 lg:text-sm lg:px-6 lg:py-3'>
+              <a className='px-3.5 py-2.5 uppercase text-xs font-sansBold rounded text-white bg-btnOrange hover:underline focus:underline sm:px-4 lg:text-sm lg:px-5 lg:py-3'>
                 Request a quote
               </a>
             </Link>
