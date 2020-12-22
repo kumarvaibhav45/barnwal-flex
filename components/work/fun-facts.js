@@ -1,12 +1,28 @@
+import { useState, useEffect, useRef } from 'react'
 import SectionTitle from '../section-title'
 import FactCards from './fact-cards'
-import { useInView } from 'react-intersection-observer'
 
 const FunFacts = ({ title, funFacts }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.8,
-  })
+  const [inView, setInView] = useState(false)
+  const ref = useRef(null)
+  useEffect(() => {
+    let options = {
+      root: null,
+      threshold: 0.9,
+    }
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+        }
+      })
+    }
+    const observer = new IntersectionObserver(callback, options)
+    ref.current && observer.observe(ref.current)
+    return () => {
+      ref.current && observer.unobserve(ref.current)
+    }
+  }, [ref])
   return (
     <div className='section-container pb-0 mb-0 lg:mb-4' ref={ref}>
       <SectionTitle name={title} />

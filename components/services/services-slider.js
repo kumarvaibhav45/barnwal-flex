@@ -17,7 +17,7 @@ export default function ServicesSlider({ services, screen }) {
       </div>
     ),
     customPaging: (i) => (
-      <div className='w-6 h-6 text-sm pt-0.5 text-textBlack border border-darkGray'>
+      <div className='w-6 h-6 text-sm text-textBlack border border-darkGray flex justify-center items-center'>
         {i + 1}
       </div>
     ),

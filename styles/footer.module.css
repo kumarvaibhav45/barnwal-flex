@@ -1,3 +1,4 @@
-.upButton:hover {
+.upButton:hover,
+.upButton:focus {
   bottom: -6px;
 }

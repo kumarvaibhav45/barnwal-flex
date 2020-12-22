@@ -18,7 +18,7 @@ const Header = ({ title, scrolled, visibleSection }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <header
-      id="header"
+      id='header'
       className={`fixed m-0 w-screen z-50 top-0 left-0 right-0 bg-white header py-2 lg:py-2.5 lg:block ${
         scrolled ? styles.scrolled : ''
       } transition-all duration-200 ease-in overflow-none`}
@@ -31,7 +31,7 @@ const Header = ({ title, scrolled, visibleSection }) => {
             <Link href='/'>
               <a
                 title='logo'
-                className='no-underline text-xl font-thin text-brightRed font-openSans lg:text-2xl'
+                className='no-underline text-xl font-openSans text-brightRed font-openSans sm:text-2xl lg:text-3xl'
               >
                 {title}
               </a>

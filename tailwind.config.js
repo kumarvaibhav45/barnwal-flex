@@ -5,9 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      'sm': '620px',
-      'md': '840px',
-      'lg': '1150px',
+      sm: '620px',
+      md: '840px',
+      lg: '1200px',
     },
     colors: {
       transparent: 'transparent',
@@ -39,7 +39,6 @@ module.exports = {
         sans: ['Nimbus Sans', ...defaultTheme.fontFamily.sans],
         sansBold: ['Nimbus Sans Bold', 'Nimbus Sans', 'sans-serif'],
       },
-      borderWidth: ['last'],
     },
   },
   variants: {

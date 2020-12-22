@@ -20,7 +20,7 @@
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1200px) {
   .nav {
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
     transition: all 200ms ease-in;
@@ -39,7 +39,7 @@
     opacity: 0;
   }
 }
-@media (min-width: 1150px) {
+@media (min-width: 1200px) {
   .scrolled {
     height: 60px;
     padding: 15px 0;

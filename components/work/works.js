@@ -22,7 +22,7 @@ const Works = forwardRef((props, ref) => {
           {works?.map(({ id, img, title, pageTitle = '' }) => (
             <div key={id} className='flex darker-overlay'>
               {pageTitle ? (
-                <Link href={`/works/${pageTitle}`} scroll={false}>
+                <Link href={`/works/${pageTitle}`}>
                   <a>
                     <ZoomCard img={img} text={title} width='800' height='628' />
                   </a>

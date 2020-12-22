@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../../styles/footer.module.css'
 import SocialIcon from '../social-icon'
 import { useRouter } from 'next/router'

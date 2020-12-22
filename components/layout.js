@@ -10,6 +10,7 @@ export default function Layout({
   title = '',
   scrolled,
   visibleSection,
+  screenSize,
 }) {
   return (
     <>
@@ -30,7 +31,7 @@ export default function Layout({
         visibleSection={visibleSection}
       />
       <main>{children}</main>
-      <GoogleMap smallIcon={false} />
+      <GoogleMap smallIcon={screenSize === 'lg' ? false : true} />
       <Footer />
     </>
   )

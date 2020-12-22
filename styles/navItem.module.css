@@ -2,15 +2,11 @@
   color: #fe1717;
 }
 
-.NavItem > span {
-  line-height: 20px;
-  padding: 2px 0;
-  border-bottom: 1px solid transparent;
-}
-.NavItem:hover > span {
+.NavItem:hover > span{
   text-decoration: 1px solid underline #323232;
   border-bottom-color: #323232;
 }
+
 .NavItem.selected > span {
   border-bottom-color: #fe1717;
 }

@@ -3,24 +3,20 @@ import SectionTitle from '../section-title'
 import { Parallax } from 'react-parallax'
 import Image from 'next/image'
 
-const ContactInfoItem = ({ icon, text, title, mail = false }) => (
+const ContactInfoItem = ({ children, icon, title }) => (
   <li className='mb-4 flex items-baseline lg:mb-6'>
     <div className='flex-shrink-0 flex justify-center items-center w-6 h-6 text-center bg-white mr-2.5'>
       <Image src={icon} width='12' height='12' title={title} />
     </div>
-    <div
-      className={`text-xs text-textRed cursor-pointer hover:text-white transition-all duration-150 ease-linear sm:text-sm ${
-        mail ? 'hover:underline' : ''
-      }`}
-    >
-      {mail ? <a href={`mailto:${text}`}>{text}</a> : text}
+    <div className='text-xs text-textRed cursor-pointer sm:text-sm'>
+      {children}
     </div>
   </li>
 )
 
 const Contact = forwardRef((props, ref) => {
   const onSubmitHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault()
   }
   return (
     <Parallax bgImage='/assets/images/parallax-contact.jpg' strength={500}>
@@ -37,36 +33,58 @@ const Contact = forwardRef((props, ref) => {
                   <ContactInfoItem
                     icon='/assets/images/icons/map-marker-alt.svg'
                     title='address'
-                    text='Sheetal Chaya Lodge, Buxidih Road, Giridih (815301), Jharkhand, India.'
-                  />
+                  >
+                    <p className='hover:text-white transition-all duration-150 ease-linear'>
+                      Sheetal Chaya Lodge, Buxidih Road, Giridih (815301),
+                      Jharkhand, India.
+                    </p>
+                  </ContactInfoItem>
                   <ContactInfoItem
                     icon='/assets/images/icons/phone-alt.svg'
                     title='phone number'
-                    text='+91 9263636326 / +91 9263636326'
-                  />
+                  >
+                    <>
+                      <a
+                        href='tel:+919263636326'
+                        className='hover:underline hover:text-white transition-all duration-150 ease-linear'
+                      >
+                        +91 9263636326
+                      </a>
+                      {' / '}
+                      <a
+                        href='tel:+919263636326'
+                        className='hover:underline hover:text-white transition-all duration-150 ease-linear'
+                      >
+                        +91 9263636326
+                      </a>
+                    </>
+                  </ContactInfoItem>
                   <ContactInfoItem
                     icon='/assets/images/icons/envelope.svg'
                     title='email'
-                    text='contact@barnwalflex.com'
-                    mail={true}
-                  />
+                  >
+                    <a
+                      href='mailto:contact@barnwalflex.com'
+                      className='hover:underline hover:text-white transition-all duration-150 ease-linear'
+                    >
+                      contact@barnwalflex.com
+                    </a>
+                  </ContactInfoItem>
                   <ContactInfoItem
                     icon='/assets/images/icons/envelope.svg'
                     title='email'
-                    text='barnwalflex@gmail.com'
-                    mail={true}
-                  />
+                  >
+                    <a
+                      href='mailto:barnwalflex@gmail.com'
+                      className='hover:underline hover:text-white transition-all duration-150 ease-linear'
+                    >
+                      barnwalflex@gmail.com
+                    </a>
+                  </ContactInfoItem>
                 </ul>
               </div>
               <div className='ml-1'>
-                <form
-                  method='POST'
-                  action='/success'
-                  name='contact'
-                  netlify-honeypot='bot-field'
-                  data-netlify='true'
-                >
-                  <input type='hidden' name='form-name' value='contact' />
+                <form method='POST' name='contact' onSubmit={onSubmitHandler}>
                   <div>
                     <input
                       type='text'

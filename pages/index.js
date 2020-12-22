@@ -73,7 +73,7 @@ export default function Home({
       })
     }
     const observer = new IntersectionObserver(callback, options)
-    sectionRefs.forEach(({ ref }) => observer.observe(ref.current))
+    sectionRefs.forEach(({ ref }) => ref.current && observer.observe(ref.current))
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', setScreen)
     setScreen()
@@ -86,7 +86,7 @@ export default function Home({
     }
   }, [sectionRefs])
   return (
-    <Layout scrolled={scrolled} visibleSection={visibleSection}>
+    <Layout scrolled={scrolled} visibleSection={visibleSection} screenSize={screenSize}>
       <Banner ref={homeRef} fullBanner={fullBanner} />
       <About ref={aboutRef} />
       <Team members={members} />
