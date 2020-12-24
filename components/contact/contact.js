@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { useState, forwardRef } from 'react'
 import SectionTitle from '../section-title'
 import { Parallax } from 'react-parallax'
 import Image from 'next/image'
@@ -15,8 +15,31 @@ const ContactInfoItem = ({ children, icon, title }) => (
 )
 
 const Contact = forwardRef((props, ref) => {
+  const [formMessage, setformMessage] = useState('')
   const onSubmitHandler = (e) => {
     e.preventDefault()
+    setformMessage('Sending...')
+    const url = 'api/form'
+    const { name, email, message } = e.target
+    const user = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+        if (!res.error) setformMessage('Thank you for contacting us.')
+        else setformMessage("Sorry! Your message couldn' be sent.")
+      })
   }
   return (
     <Parallax bgImage='/assets/images/parallax-contact.jpg' strength={500}>
@@ -88,12 +111,14 @@ const Contact = forwardRef((props, ref) => {
                   <div>
                     <input
                       type='text'
+                      required
                       placeholder='Name'
                       name='name'
                       className='w-56 px-1.5 py-1 mb-2.5 mr-6 text-inputRed border border-bgGray text-sm rounded leading-5 inline-block bg-white shadow-inner focus:border-lightBlue focus:shadow-focus focus:outline-none lg:w-60'
                     />
                     <input
                       type='email'
+                      required
                       placeholder='Email'
                       name='email'
                       className='w-56 px-1.5 py-1 mb-2.5 text-inputRed border border-bgGray text-sm rounded leading-5 inline-block bg-white shadow-inner focus:border-lightBlue focus:shadow-focus focus:outline-none lg:w-60'
@@ -102,6 +127,7 @@ const Contact = forwardRef((props, ref) => {
                   <div>
                     <textarea
                       placeholder='Message'
+                      name='message'
                       className='resize-none w-56 h-40 px-1.5 py-1 mb-2.5 mr-6 text-inputRed border border-bgGray text-sm rounded leading-5 inline-block bg-white shadow-inner focus:border-lightBlue focus:shadow-focus focus:outline-none lg:w-56 lg:mr-10'
                     ></textarea>
                     <div className='w-32 h-32 bg-seperator inline-block mb-2.5'></div>
@@ -109,7 +135,8 @@ const Contact = forwardRef((props, ref) => {
                   <div className='flex justify-start lg:justify-end'>
                     <button
                       type='submit'
-                      className='px-4 py-2 mb-2.5 mr-4 text-white bg-lineBlack hover:bg-btnBlack rounded-sm uppercase transition-all duration-200 ease-linear text-xs font-bold lg:text-sm lg:px-4 lg:py-1.5'
+                      className='px-4 py-2 mb-2.5 mr-4 text-white bg-lineBlack hover:bg-btnBlack rounded-sm uppercase transition-all duration-200 ease-linear text-xs font-bold lg:text-sm lg:px-4 lg:py-1.5 disabled:text-darkGray'
+                      disabled={formMessage === 'Sending...'}
                     >
                       Send
                     </button>
@@ -119,7 +146,7 @@ const Contact = forwardRef((props, ref) => {
                   id='message'
                   className='text-white mt-4 text-xs leading-5 sm:text-sm'
                 >
-                  Thank you for contacting us.
+                  {formMessage}
                 </div>
               </div>
             </div>

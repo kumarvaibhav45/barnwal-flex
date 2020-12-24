@@ -22,6 +22,8 @@ export default function Work({ workData, funFacts2 }) {
   return (
     <Layout
       title={workData[0].title}
+      description={workData[0].description}
+      image={workData[0].img}
       scrolled={scrolled}
       visibleSection={'work'}
     >

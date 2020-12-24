@@ -9,6 +9,8 @@ import Services from '../components/services/services'
 import GiftsForAll from '../components/gifts/gifts-for-all'
 import Contact from '../components/contact/contact'
 
+const description = 'Barnwal Flex - Your one stop printing solution'
+
 export default function Home({
   gifts,
   clients,
@@ -42,11 +44,11 @@ export default function Home({
 
   useEffect(() => {
     const setScreen = () => {
-      if(window.innerWidth < 620) {
+      if (window.innerWidth < 620) {
         setScreenSize('xs')
-      } else if(window.innerWidth < 840) {
+      } else if (window.innerWidth < 840) {
         setScreenSize('sm')
-      } else if(window.innerWidth < 1150) {
+      } else if (window.innerWidth < 1150) {
         setScreenSize('md')
       } else {
         setScreenSize('lg')
@@ -73,7 +75,9 @@ export default function Home({
       })
     }
     const observer = new IntersectionObserver(callback, options)
-    sectionRefs.forEach(({ ref }) => ref.current && observer.observe(ref.current))
+    sectionRefs.forEach(
+      ({ ref }) => ref.current && observer.observe(ref.current)
+    )
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', setScreen)
     setScreen()
@@ -86,7 +90,12 @@ export default function Home({
     }
   }, [sectionRefs])
   return (
-    <Layout scrolled={scrolled} visibleSection={visibleSection} screenSize={screenSize}>
+    <Layout
+      scrolled={scrolled}
+      visibleSection={visibleSection}
+      screenSize={screenSize}
+      description={description}
+    >
       <Banner ref={homeRef} fullBanner={fullBanner} />
       <About ref={aboutRef} />
       <Team members={members} />
