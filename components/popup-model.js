@@ -9,7 +9,7 @@ const PopupModel = ({ img, title, close, width, height }) => (
       alt={title}
       title={title}
     />
-    <div className='flex justify-between items-center mt-2 text-xs md:text-sm'>
+    <div className='flex justify-between items-center mt-1 text-xs md:text-sm'>
       <p className='text-sm pt-2 md:text-base'>{title}</p>
       <button
         onClick={close}

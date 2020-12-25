@@ -2,13 +2,13 @@
   color: #fe1717;
 }
 
-.NavItem:hover > span{
-  text-decoration: 1px solid underline #323232;
-  border-bottom-color: #323232;
-}
-
 .NavItem.selected > span {
   border-bottom-color: #fe1717;
+}
+
+.NavItem:hover > span {
+  text-decoration: solid underline #323232 1px;
+  border-bottom-color: #323232;
 }
 
 .NavItem:last-child {

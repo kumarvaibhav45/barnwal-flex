@@ -1,6 +1,8 @@
 .scrolled {
   background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
 }
+
 .scrolled > div > div {
   display: flex;
   align-items: center;
@@ -15,9 +17,6 @@
     brightness(104%) contrast(97%);
   filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
     brightness(124%) contrast(97%);
-}
-.scrolled {
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
 }
 
 @media (max-width: 1200px) {
