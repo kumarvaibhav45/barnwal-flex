@@ -65,7 +65,7 @@ export default function Home({
     }
     let options = {
       root: null,
-      threshold: 0.9,
+      threshold: 1.0,
     }
     const callback = (entries) => {
       entries.forEach((entry) => {
