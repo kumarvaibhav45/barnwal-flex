@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import styles from '../../styles/footer.module.css'
 import SocialIcon from '../social-icon'
-import { useRouter } from 'next/router'
 
 const Footer = () => {
-  const router = useRouter()
   return (
     <footer className='bg-white w-full mx-auto py-12 relative overflow-y-hidden'>
       <div className='centered-container flex justify-between space-x-2'>
@@ -33,12 +31,12 @@ const Footer = () => {
         onClick={() => {
           window.scrollTo(0, 0)
         }}
-        className={`text-center absolute -bottom-3 left-1/2 w-9 h-12 bg-black text-white transition-all duration-250 ease-out  icon transform -translate-x-1/2 ${styles.upButton}`}
+        className={`text-center absolute -bottom-3 left-1/2 w-9 h-12 bg-btnBlack text-white transition-all duration-250 ease-out icon transform -translate-x-1/2 ${styles.upButton}`}
       >
         <Image
           src='/assets/images/icons/angle-double-up.svg'
           alt='top'
-          width='6'
+          width='8'
           height='14'
         />
       </button>

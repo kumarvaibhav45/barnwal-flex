@@ -1,0 +1,8 @@
+.locateUs img {
+  -webkit-filter: brightness(1000);
+  filter: brightness(1000);
+}
+.locateUs:hover img {
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+}

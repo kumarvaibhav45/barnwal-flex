@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from './header/header'
 import Footer from './footer/footer'
-import GoogleMap from './map'
+import Map from './map'
 
 const siteTitle = 'Barnwal Flex'
 
@@ -46,7 +46,7 @@ export default function Layout({
         visibleSection={visibleSection}
       />
       <main>{children}</main>
-      <GoogleMap smallIcon={screenSize === 'lg' ? false : true} />
+      <Map smallIcon={screenSize === 'lg' ? false : true} />
       <Footer />
     </>
   )

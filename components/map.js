@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { useState } from 'react'
+import styles from '../styles/map.module.css'
 
-export default function GoogleMap({ smallIcon }) {
+export default function Map({ smallIcon }) {
   const [isMapOpen, setIsMapOpen] = useState(false)
   return (
     <div className='w-full'>
       <button
-        className='w-full flex justify-center items-center py-6 border-0 bg-black text-white uppercase text-sm locate-us transition-all duration-250 ease hover:underline focus:outline-none sm:text-base md:text-xl lg:text-2xl'
+        className={`w-full flex justify-center items-center py-6 border-0 bg-btnBlack text-white uppercase text-sm transition-all duration-250 ease hover:underline hover:bg-bgGray hover:text-btnBlack focus:outline-none sm:text-base md:text-xl lg:text-2xl ${styles.locateUs}`}
         onClick={() => {
           setIsMapOpen(!isMapOpen)
         }}
@@ -25,7 +26,7 @@ export default function GoogleMap({ smallIcon }) {
               width={smallIcon ? '16' : '24'}
               height={smallIcon ? '16' : '24'}
             />
-            )}
+          )}
         </span>
       </button>
       <div
