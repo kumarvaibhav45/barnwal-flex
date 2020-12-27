@@ -4,10 +4,10 @@ import { Parallax } from 'react-parallax'
 import ServicesSlider from './services-slider'
 
 const Services = forwardRef((props, ref) => {
-  const { services, screenSize } = props
+  const { id, services, screenSize } = props
   return (
     <Parallax bgImage='/assets/images/parallax-services.jpg' strength={500}>
-      <div ref={ref} className='section-container py-0' id='services'>
+      <div ref={ref} className='section-container py-0' id={id}>
         <div className='light-overlay pt-20 pb-16 lg:py-24'>
           <div className='centered-container'>
             <SectionTitle name='Services' />

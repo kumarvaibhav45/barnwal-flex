@@ -31,12 +31,12 @@ const Footer = () => {
         onClick={() => {
           window.scrollTo(0, 0)
         }}
-        className={`text-center absolute -bottom-3 left-1/2 w-9 h-12 bg-btnBlack text-white transition-all duration-250 ease-out icon transform -translate-x-1/2 ${styles.upButton}`}
+        className={`text-center absolute -bottom-3 left-1/2 w-9 h-12 bg-btnBlack text-white transition-all duration-400 ease-out icon transform -translate-x-1/2 ${styles.upButton}`}
       >
         <Image
           src='/assets/images/icons/angle-double-up.svg'
           alt='top'
-          width='8'
+          width='7'
           height='14'
         />
       </button>

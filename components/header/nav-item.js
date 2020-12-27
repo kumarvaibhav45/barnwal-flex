@@ -14,7 +14,7 @@ const NavItem = ({ name, ref_id, visibleSection, setMenuOpen }) => {
           }
         }}
       >
-        <span className='py-0.5 border-b border-transparent leading-5'>
+        <span className='py-0.5 border-b border-transparent leading-5 group-hover:underline group-hover:border-textBlack'>
           {name}
         </span>
       </a>

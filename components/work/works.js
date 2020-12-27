@@ -7,10 +7,10 @@ import Popup from 'reactjs-popup'
 import PopupModel from '../popup-model.js'
 
 const Works = forwardRef((props, ref) => {
-  const { works, funFacts, worksTitle = 'Our Work' } = props
+  const { id, works, funFacts, worksTitle = 'Our Work' } = props
   return (
     <div
-      id='work'
+      id={id}
       ref={ref ? ref : null}
       className={`section-container ${
         worksTitle === 'Our Work' ? 'bg-white' : 'bg-bgGray mt-10'

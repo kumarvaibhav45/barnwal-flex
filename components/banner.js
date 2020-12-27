@@ -51,10 +51,10 @@ const Banner = forwardRef((props, ref) => {
     ),
   }
   const sliderRef = useRef(null)
-  const { fullBanner } = props
+  const { id, fullBanner } = props
   return (
     <div
-      id='home'
+      id={id}
       ref={ref}
       className={`${
         fullBanner ? styles.fullHome : styles.home

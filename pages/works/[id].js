@@ -21,16 +21,16 @@ export default function Work({ workData, funFacts2 }) {
   }, [])
   return (
     <Layout
-      title={workData[0].title}
-      description={workData[0].description}
-      image={workData[0].img}
+      title={workData[0]?.title}
+      description={workData[0]?.description}
+      image={workData[0]?.img}
       scrolled={scrolled}
       visibleSection={'work'}
     >
       <Works
-        works={workData[0].album}
+        works={workData[0]?.album}
         funFacts={funFacts2}
-        worksTitle={workData[0].title}
+        worksTitle={workData[0]?.title}
       />
     </Layout>
   )

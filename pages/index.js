@@ -9,8 +9,6 @@ import Services from '../components/services/services'
 import GiftsForAll from '../components/gifts/gifts-for-all'
 import Contact from '../components/contact/contact'
 
-const description = 'Barnwal Flex - Your one stop printing solution'
-
 export default function Home({
   gifts,
   clients,
@@ -65,7 +63,7 @@ export default function Home({
     }
     let options = {
       root: null,
-      threshold: 1.0,
+      threshold: 0.9,
     }
     const callback = (entries) => {
       entries.forEach((entry) => {
@@ -94,16 +92,34 @@ export default function Home({
       scrolled={scrolled}
       visibleSection={visibleSection}
       screenSize={screenSize}
-      description={description}
     >
-      <Banner ref={homeRef} fullBanner={fullBanner} />
-      <About ref={aboutRef} />
+      <Banner
+        ref={homeRef}
+        id={sectionRefs[0].section}
+        fullBanner={fullBanner}
+      />
+      <About ref={aboutRef} id={sectionRefs[1].section} />
       <Team members={members} />
-      <Clients ref={clientsRef} clients={clients} screenSize={screenSize} />
-      <Works ref={workRef} works={works} funFacts={funFacts1} />
-      <Services ref={servicesRef} services={services} screenSize={screenSize} />
-      <GiftsForAll ref={giftsRef} gifts={gifts} />
-      <Contact ref={contactRef} />
+      <Clients
+        ref={clientsRef}
+        id={sectionRefs[5].section}
+        clients={clients}
+        screenSize={screenSize}
+      />
+      <Works
+        ref={workRef}
+        id={sectionRefs[2].section}
+        works={works}
+        funFacts={funFacts1}
+      />
+      <Services
+        ref={servicesRef}
+        id={sectionRefs[3].section}
+        services={services}
+        screenSize={screenSize}
+      />
+      <GiftsForAll id={sectionRefs[4].section} ref={giftsRef} gifts={gifts} />
+      <Contact ref={contactRef} id={sectionRefs[6].section} />
     </Layout>
   )
 }

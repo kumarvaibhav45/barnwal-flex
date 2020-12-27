@@ -5,6 +5,7 @@
       "img": "/assets/images/works/steel-letter.png",
       "title": "Steel letters",
       "pageTitle": "steel-letters",
+      "description": "We offer premium grade stainless steel sign letters made from solid stainless plate perfect for indoors and outdoors use.",
       "album": [
         {
           "id": "1.1",
@@ -58,6 +59,7 @@
       "img": "/assets/images/works/vinyl-glass.png",
       "title": "Vinyle & glass film",
       "pageTitle": "vinyl-&-glass-film",
+      "description": "We offer vinyl prints which are one of the most common kind of banner snd signage printing used nowadays and our glass films are made to last.",
       "album": [
         {
           "id": "1.1",
@@ -79,8 +81,9 @@
     {
       "id": 3,
       "img": "/assets/images/works/arcylic-led.png",
-      "title": "Arcylic and led letter",
-      "pageTitle": "arcylic-and-led-letter",
+      "title": "Acrylic and led letter",
+      "pageTitle": "acrylic-and-led-letter",
+      "description": "These are some of the most versatile and budget-friendly alternative to metal letters. Our solid, laser-cut acrylic letters provide a high-quality look with wide variety of options.",
       "album": [
         {
           "id": "3.1",
@@ -104,6 +107,7 @@
       "img": "/assets/images/works/offset-print.png",
       "title": "Offset digital print",
       "pageTitle": "offset-digital-print",
+      "description": "Offset printing produces accurate color reproduction, clean, crisp and professional look. We offer offset printing which are best choice when larger quantities are needed.",
       "album": [
         {
           "id": "1.1",
@@ -127,6 +131,7 @@
       "img": "/assets/images/works/steel-letter.png",
       "title": "Hl",
       "pageTitle": "hl",
+      "description": "We provide laser prints that produces high-quality text and graphics.",
       "album": [
         {
           "id": "1.1",

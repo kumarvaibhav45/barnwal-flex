@@ -15,6 +15,7 @@ const ContactInfoItem = ({ children, icon, title }) => (
 )
 
 const Contact = forwardRef((props, ref) => {
+  const { id } = props
   const [formMessage, setformMessage] = useState('')
   const onSubmitHandler = (e) => {
     e.preventDefault()
@@ -43,7 +44,7 @@ const Contact = forwardRef((props, ref) => {
   }
   return (
     <Parallax bgImage='/assets/images/parallax-contact.jpg' strength={500}>
-      <div ref={ref} className='section-container py-0' id='contact'>
+      <div ref={ref} className='section-container py-0' id={id}>
         <div className='dark-overlay pt-20 pb-16 lg:py-24 md:py-18'>
           <div className='centered-container'>
             <SectionTitle name="Let's get in touch" color='white' />

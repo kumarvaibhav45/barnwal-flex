@@ -1,4 +1,4 @@
-export default (req, res) => {
+export default async (req, res) => {
   if (req.method !== 'POST' && req.method !== 'post') {
     return res.status(403).send({})
   }

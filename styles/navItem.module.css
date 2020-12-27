@@ -6,11 +6,6 @@
   border-bottom-color: #fe1717;
 }
 
-.NavItem:hover > span {
-  text-decoration: solid underline #323232 1px;
-  border-bottom-color: #323232;
-}
-
 .NavItem:last-child {
   border-bottom: none;
 }

@@ -4,12 +4,12 @@ import { Parallax } from 'react-parallax'
 import MarqueeSlider from './marquee-slider'
 
 const Clients = forwardRef((props, ref) => {
-  const { clients, screenSize } = props
+  const { id, clients, screenSize } = props
   return (
     <Parallax bgImage='/assets/images/parallax-quote.jpg' strength={500}>
       <div
         ref={ref}
-        id='clients'
+        id={id}
         className='section-container py-0'
         style={{ backgroundImage: '/assets/images/parallax-quote.jpg' }}
       >
