@@ -120,6 +120,7 @@ body {
   max-width: 720px;
   padding: 1rem;
   padding-bottom: 0.4rem;
+  border-radius: 4px;
 }
 .popup-content img {
   width: 100%;

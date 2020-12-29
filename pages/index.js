@@ -86,7 +86,15 @@ export default function Home({
         ({ ref }) => ref.current && observer.unobserve(ref.current)
       )
     }
-  }, [sectionRefs])
+  }, [
+    homeRef,
+    aboutRef,
+    workRef,
+    servicesRef,
+    contactRef,
+    giftsRef,
+    clientsRef,
+  ])
   return (
     <Layout
       scrolled={scrolled}

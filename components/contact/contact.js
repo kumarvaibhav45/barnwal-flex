@@ -14,8 +14,7 @@ const ContactInfoItem = ({ children, icon, title }) => (
   </li>
 )
 
-const Contact = forwardRef((props, ref) => {
-  const { id } = props
+const Contact = forwardRef(({ id }, ref) => {
   const [formMessage, setformMessage] = useState('')
   const onSubmitHandler = (e) => {
     e.preventDefault()
@@ -38,7 +37,7 @@ const Contact = forwardRef((props, ref) => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res)
-        if (!res.error) setformMessage('Thank you for contacting us.')
+        if (res.status === 200) setformMessage('Thank you for contacting us.')
         else setformMessage("Sorry! Your message couldn' be sent.")
       })
   }

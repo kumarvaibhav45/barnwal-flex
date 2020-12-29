@@ -6,9 +6,8 @@ import Link from 'next/link'
 import Popup from 'reactjs-popup'
 import PopupModel from '../popup-model.js'
 
-const Works = forwardRef((props, ref) => {
-  const { id, works, funFacts, worksTitle = 'Our Work' } = props
-  return (
+const Works = forwardRef(
+  ({ id, works, funFacts, worksTitle = 'Our Work' }, ref) => (
     <div
       id={id}
       ref={ref ? ref : null}
@@ -60,6 +59,6 @@ const Works = forwardRef((props, ref) => {
       <FunFacts title='Some fun facts' funFacts={funFacts} />
     </div>
   )
-})
+)
 
 export default Works

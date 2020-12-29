@@ -29,7 +29,7 @@ const Slide = ({ text, banner, fullBanner }) => {
   )
 }
 
-const Banner = forwardRef((props, ref) => {
+const Banner = forwardRef(({ id, fullBanner }, ref) => {
   const settings = {
     arrows: false,
     dots: true,
@@ -37,13 +37,13 @@ const Banner = forwardRef((props, ref) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 300,
-    autoplaySpeed: 6000,
+    speed: 400,
+    autoplaySpeed: 9000,
     cssEase: 'linear',
     pauseOnHover: false,
     appendDots: (dots) => (
       <div style={{ position: 'absolute', bottom: '10px' }}>
-        <ul className='m-0'> {dots} </ul>
+        <ul className='m-0'>{dots}</ul>
       </div>
     ),
     customPaging: () => (
@@ -51,7 +51,6 @@ const Banner = forwardRef((props, ref) => {
     ),
   }
   const sliderRef = useRef(null)
-  const { id, fullBanner } = props
   return (
     <div
       id={id}

@@ -32,38 +32,35 @@ const AboutCard = ({ heading, text }) => (
   </div>
 )
 
-const About = forwardRef((props, ref) => {
-  const { id } = props
-  return (
-    <div id={id} ref={ref} className='section-container bg-bgGray'>
-      <div className='centered-container'>
-        <SectionTitle name='About our company' />
-        <div className='content flex flex-col space-y-8 lg:space-y-16'>
-          <div className='flex flex-col space-y-6 sm:flex-row sm:space-y-0 sm:space-x-10 lg:space-x-20'>
-            <AboutCard
-              heading={aboutText.card1.heading}
-              text={aboutText.card1.text}
-            />
-            <AboutCard
-              heading={aboutText.card2.heading}
-              text={aboutText.card2.text}
-            />
-            <AboutCard
-              heading={aboutText.card3.heading}
-              text={aboutText.card3.text}
-            />
-          </div>
-          <div className='seperator w-full h-px bg-seperator'></div>
-          <div>
-            <AboutCard
-              heading={aboutText.card4.heading}
-              text={aboutText.card4.text}
-            />
-          </div>
+const About = forwardRef(({ id }, ref) => (
+  <div id={id} ref={ref} className='section-container bg-bgGray'>
+    <div className='centered-container'>
+      <SectionTitle name='About our company' />
+      <div className='content flex flex-col space-y-8 lg:space-y-16'>
+        <div className='flex flex-col space-y-6 sm:flex-row sm:space-y-0 sm:space-x-10 lg:space-x-20'>
+          <AboutCard
+            heading={aboutText.card1.heading}
+            text={aboutText.card1.text}
+          />
+          <AboutCard
+            heading={aboutText.card2.heading}
+            text={aboutText.card2.text}
+          />
+          <AboutCard
+            heading={aboutText.card3.heading}
+            text={aboutText.card3.text}
+          />
+        </div>
+        <div className='seperator w-full h-px bg-seperator'></div>
+        <div>
+          <AboutCard
+            heading={aboutText.card4.heading}
+            text={aboutText.card4.text}
+          />
         </div>
       </div>
     </div>
-  )
-})
+  </div>
+))
 
 export default About
