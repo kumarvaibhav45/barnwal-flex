@@ -10,7 +10,10 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const loadingStart = () => setLoading(true)
-    const loadingComplete = () => setLoading(false)
+    const loadingComplete = () =>
+      setTimeout(() => {
+        setLoading(false)
+      }, 500)
     router.events.on('routeChangeStart', loadingStart)
     router.events.on('routeChangeComplete', loadingComplete)
     router.events.on('routeChangeError', loadingComplete)

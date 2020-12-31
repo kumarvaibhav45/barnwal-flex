@@ -14,7 +14,7 @@ const PopupModel = ({ img, title, close, width, height }) => (
       <button
         onClick={close}
         aria-label='popup modal close'
-        className='text-3xl w-6 h-6 p-0 hover:text-orange transition-all duration-100 focus:outline-none'
+        className='text-3xl w-6 h-6 px-0 mb-1 hover:text-orange transition-all duration-100 focus:outline-none'
       >
         &times;
       </button>

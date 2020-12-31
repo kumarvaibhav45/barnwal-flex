@@ -26,7 +26,7 @@ const Header = ({ title, scrolled, visibleSection }) => {
       <div
         className={`flex justify-between items-center mx-auto h-14 transition-all duration-200 ease-linear sm:mx-8 lg:w-10/12 lg:mx-auto ${styles.largeScreenHeader}`}
       >
-        <div className='mx-4 mt-0.5 flex justify-center items-center transition-all duration-200 ease-linear lg:mt-2'>
+        <div className='mx-4 mt-0.5 flex justify-center items-center transition-all duration-200 ease-linear lg:mt-1'>
           <h1>
             <Link href='/'>
               <a
