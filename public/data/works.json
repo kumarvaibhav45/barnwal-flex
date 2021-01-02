@@ -1,7 +1,7 @@
 {
   "works": [
     {
-      "id": 1,
+      "id": "1",
       "img": "/assets/images/works/steel-letter.png",
       "title": "Steel letters",
       "pageTitle": "steel-letters",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "img": "/assets/images/works/vinyl-glass.png",
       "title": "Vinyle & glass film",
       "pageTitle": "vinyl-&-glass-film",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "img": "/assets/images/works/arcylic-led.png",
       "title": "Acrylic and led letter",
       "pageTitle": "acrylic-and-led-letter",
@@ -87,23 +87,23 @@
       "album": [
         {
           "id": "3.1",
-          "img": "/assets/images/works/vinyl-glass.png",
+          "img": "/assets/images/works/arcylic-led.png",
           "title": "Steel letters"
         },
         {
           "id": "3.2",
-          "img": "/assets/images/works/vinyl-glass.png",
+          "img": "/assets/images/works/arcylic-led.png",
           "title": "Steel letters"
         },
         {
           "id": "3.3",
-          "img": "/assets/images/works/vinyl-glass.png",
+          "img": "/assets/images/works/arcylic-led.png",
           "title": "Steel letters"
         }
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "img": "/assets/images/works/offset-print.png",
       "title": "Offset digital print",
       "pageTitle": "offset-digital-print",
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "img": "/assets/images/works/steel-letter.png",
       "title": "Hl",
       "pageTitle": "hl",

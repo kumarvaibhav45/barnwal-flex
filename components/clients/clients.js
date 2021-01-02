@@ -20,4 +20,5 @@ const Clients = forwardRef(({ id, clients, screenSize }, ref) => (
     </div>
   </Parallax>
 ))
+
 export default Clients

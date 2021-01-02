@@ -1,23 +1,23 @@
 {
   "members": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Guddu Barnwal",
-      "img": "/assets/images/members/member.jpg",
+      "img": "/assets/images/team/member.jpg",
       "designation": "CEO",
       "message": "Our purpose is 'Creating brands which people can relate with'. Through a combination of research, strategy, creativity and technology, we help you discover the potential of your brand, and unleash it."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Guddu Barnwal",
-      "img": "/assets/images/members/member.jpg",
+      "img": "/assets/images/team/member.jpg",
       "designation": "Managing Director",
       "message": "Rather than telling you who we are, I think it's important that you know who we are not. We're not another ad agency promising 'out-of-the-box' creativity and churning out overly-used-and-abused ideas."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Experts",
-      "img": "/assets/images/members/member.jpg",
+      "img": "/assets/images/team/member.jpg",
       "designation": "Other Team Members",
       "message": "We create unique design and distinctive corporate and brand worlds at the premium end. Especially adapted to your industry and target group."
     }

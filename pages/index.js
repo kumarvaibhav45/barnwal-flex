@@ -135,7 +135,7 @@ export default function Home({
 export async function getStaticProps() {
   const { gifts } = await require('../public/data/gifts.json')
   const { clients } = await require('../public/data/clients.json')
-  const { members } = await require('../public/data/members.json')
+  const { members } = await require('../public/data/team.json')
   const { services } = await require('../public/data/services.json')
   const { funFacts1 } = await require('../public/data/fun-facts.json')
   const { works } = await require('../public/data/works.json')

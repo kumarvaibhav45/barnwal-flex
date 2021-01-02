@@ -16,6 +16,7 @@ const ContactInfoItem = ({ children, icon, title }) => (
 
 const Contact = forwardRef(({ id }, ref) => {
   const [formMessage, setformMessage] = useState('')
+
   const onSubmitHandler = (e) => {
     e.preventDefault()
     setformMessage('Sending...')
@@ -36,11 +37,12 @@ const Contact = forwardRef(({ id }, ref) => {
     fetch(url, options)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
-        if (res.status === 200) setformMessage('Thank you for contacting us.')
-        else setformMessage("Sorry! Your message couldn' be sent.")
+        if (res.message !== 'success')
+          setformMessage("Sorry! Your message couldn't be sent.")
+        else setformMessage('Thank you for contacting us.')
       })
   }
+  
   return (
     <Parallax bgImage='/assets/images/parallax-contact.jpg' strength={500}>
       <div ref={ref} className='section-container py-0' id={id}>
@@ -71,14 +73,14 @@ const Contact = forwardRef(({ id }, ref) => {
                         href='tel:+919263636326'
                         className='hover:underline hover:text-white transition-all duration-150 ease-linear'
                       >
-                        +91 9263636326
+                        +91 926 363 6326
                       </a>
                       {' / '}
                       <a
                         href='tel:+919263636326'
                         className='hover:underline hover:text-white transition-all duration-150 ease-linear'
                       >
-                        +91 9263636326
+                        +91 926 363 6326
                       </a>
                     </>
                   </ContactInfoItem>

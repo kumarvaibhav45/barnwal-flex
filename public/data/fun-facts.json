@@ -1,14 +1,14 @@
 {
   "funFacts1": [
-    { "id": 1, "number": "125", "title": "Satisfied clients" },
-    { "id": 2, "number": "200", "title": "Completed projects" },
-    { "id": 3, "number": "20", "title": "Expert workers" },
-    { "id": 4, "number": "100", "title": "Satisfaction rate", "suffix": "%" }
+    { "id": "1", "number": "125", "title": "Satisfied clients" },
+    { "id": "2", "number": "200", "title": "Completed projects" },
+    { "id": "3", "number": "20", "title": "Expert workers" },
+    { "id": "4", "number": "100", "title": "Satisfaction rate", "suffix": "%" }
   ],
   "funFacts2": [
-    { "id": 1, "number": "134", "title": "Cupa of coffee" },
-    { "id": 2, "number": "75", "title": "Projects delivered" },
-    { "id": 3, "number": "28", "title": "Satisfied Clients" },
-    { "id": 4, "number": "12", "title": "Wining Rewards" }
+    { "id": "1", "number": "134", "title": "Cupa of coffee" },
+    { "id": "2", "number": "75", "title": "Projects delivered" },
+    { "id": "3", "number": "28", "title": "Satisfied Clients" },
+    { "id": "4", "number": "12", "title": "Wining Rewards" }
   ]
 }

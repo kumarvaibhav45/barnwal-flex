@@ -1,22 +1,22 @@
 {
   "gifts": [
     {
-      "id": 1,
+      "id": "1",
       "img": "/assets/images/gifts-for-all/personalised-card.png",
       "title": "Personalised cushion printing"
     },
     {
-      "id": 2,
+      "id": "2",
       "img": "/assets/images/gifts-for-all/personalised-card.png",
       "title": "Personalised cards"
     },
     {
-      "id": 3,
+      "id": "3",
       "img": "/assets/images/gifts-for-all/mug.png",
       "title": "Mug printing"
     },
     {
-      "id": 4,
+      "id": "4",
       "img": "/assets/images/gifts-for-all/corporate-set.png",
       "title": "Corporate pen set"
     }
