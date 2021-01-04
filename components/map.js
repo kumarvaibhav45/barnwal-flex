@@ -4,6 +4,7 @@ import styles from '../styles/map.module.css'
 
 export default function Map({ smallIcon }) {
   const [isMapOpen, setIsMapOpen] = useState(false)
+
   return (
     <div className='w-full'>
       <button
@@ -17,12 +18,14 @@ export default function Map({ smallIcon }) {
           {isMapOpen ? (
             <Image
               src='/assets/images/icons/angle-up.svg'
+              alt=''
               width={smallIcon ? '16' : '24'}
               height={smallIcon ? '16' : '24'}
             />
           ) : (
             <Image
               src='/assets/images/icons/angle-down.svg'
+              alt=''
               width={smallIcon ? '16' : '24'}
               height={smallIcon ? '16' : '24'}
             />

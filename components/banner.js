@@ -1,4 +1,4 @@
-import { useRef, useEffect, forwardRef } from 'react'
+import { useRef, forwardRef } from 'react'
 import Link from 'next/link'
 import Slider from 'react-slick'
 import styles from '../styles/banner.module.css'

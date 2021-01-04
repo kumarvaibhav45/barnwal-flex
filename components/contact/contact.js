@@ -1,4 +1,4 @@
-import { useState, forwardRef } from 'react'
+import { useState, forwardRef, useRef } from 'react'
 import SectionTitle from '../section-title'
 import { Parallax } from 'react-parallax'
 import Image from 'next/image'
@@ -6,7 +6,7 @@ import Image from 'next/image'
 const ContactInfoItem = ({ children, icon, title }) => (
   <li className='mb-4 flex items-baseline lg:mb-6'>
     <div className='flex-shrink-0 flex justify-center items-center w-6 h-6 text-center bg-white mr-2.5'>
-      <Image src={icon} width='12' height='12' title={title} />
+      <Image src={icon} width='12' height='12' title={title} alt={title} />
     </div>
     <div className='text-xs text-textRed cursor-pointer sm:text-sm'>
       {children}
@@ -16,6 +16,7 @@ const ContactInfoItem = ({ children, icon, title }) => (
 
 const Contact = forwardRef(({ id }, ref) => {
   const [formMessage, setformMessage] = useState('')
+  const formRef = useRef(null)
 
   const onSubmitHandler = (e) => {
     e.preventDefault()
@@ -37,12 +38,18 @@ const Contact = forwardRef(({ id }, ref) => {
     fetch(url, options)
       .then((res) => res.json())
       .then((res) => {
-        if (res.message !== 'success')
+        if (res.message !== 'Success') {
           setformMessage("Sorry! Your message couldn't be sent.")
-        else setformMessage('Thank you for contacting us.')
+        } else {
+          setformMessage('Thank you for contacting us.')
+          Array.from(formRef.current.querySelectorAll('input')).forEach(
+            (input) => (input.value = '')
+          )
+          formRef.current.querySelector('textarea').value = ''
+        }
       })
   }
-  
+
   return (
     <Parallax bgImage='/assets/images/parallax-contact.jpg' strength={500}>
       <div ref={ref} className='section-container py-0' id={id}>
@@ -109,7 +116,13 @@ const Contact = forwardRef(({ id }, ref) => {
                 </ul>
               </div>
               <div className='ml-1'>
-                <form method='POST' name='contact' onSubmit={onSubmitHandler}>
+                <form
+                  method='POST'
+                  name='contact'
+                  title='contact'
+                  onSubmit={onSubmitHandler}
+                  ref={formRef}
+                >
                   <div>
                     <input
                       type='text'
@@ -132,7 +145,6 @@ const Contact = forwardRef(({ id }, ref) => {
                       name='message'
                       className='resize-none w-56 h-40 px-1.5 py-1 mb-2.5 mr-6 text-inputRed border border-bgGray text-sm rounded leading-5 inline-block bg-white shadow-inner focus:border-lightBlue focus:shadow-focus focus:outline-none lg:w-56 lg:mr-10'
                     ></textarea>
-                    <div className='w-32 h-32 bg-seperator inline-block mb-2.5'></div>
                   </div>
                   <div className='flex justify-start lg:justify-end'>
                     <button

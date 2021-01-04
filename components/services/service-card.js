@@ -16,6 +16,7 @@ export default function ServiceCard({ img, label, message }) {
           <Image
             unoptimized={true}
             title={label}
+            alt={label}
             src={img}
             width='256'
             height='260'
