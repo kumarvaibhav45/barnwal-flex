@@ -46,7 +46,7 @@ export default function Home({
         setScreenSize('xs')
       } else if (window.innerWidth < 840) {
         setScreenSize('sm')
-      } else if (window.innerWidth < 1150) {
+      } else if (window.innerWidth < 1200) {
         setScreenSize('md')
       } else {
         setScreenSize('lg')
@@ -127,7 +127,11 @@ export default function Home({
         screenSize={screenSize}
       />
       <GiftsForAll id={sectionRefs[4].section} ref={giftsRef} gifts={gifts} />
-      <Contact ref={contactRef} id={sectionRefs[6].section} />
+      <Contact
+        ref={contactRef}
+        id={sectionRefs[6].section}
+        screenSize={screenSize}
+      />
     </Layout>
   )
 }

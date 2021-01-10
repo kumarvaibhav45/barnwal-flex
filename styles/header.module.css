@@ -19,7 +19,7 @@
     brightness(124%) contrast(97%);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .nav {
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
     transition: all 200ms ease-in;
@@ -38,7 +38,7 @@
     opacity: 0;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
   .scrolled {
     height: 60px;
     padding: 15px 0;

@@ -45,6 +45,7 @@ const Header = ({ title, scrolled, visibleSection }) => {
             onClick={() => {
               setMenuOpen(!menuOpen)
             }}
+            aria-label='Toggle Menu'
           >
             <Image
               src='/assets/images/icons/bars.svg'

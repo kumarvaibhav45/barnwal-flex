@@ -4,7 +4,14 @@ import { Parallax } from 'react-parallax'
 import MarqueeSlider from './marquee-slider'
 
 const Clients = forwardRef(({ id, clients, screenSize }, ref) => (
-  <Parallax bgImage='/assets/images/parallax-quote.jpg' strength={500}>
+  <Parallax
+    bgImage={
+      screenSize === 'lg'
+        ? '/assets/images/parallax-clients.jpg'
+        : '/assets/images/parallax-clients-small.jpg'
+    }
+    strength={500}
+  >
     <div
       ref={ref}
       id={id}

@@ -14,7 +14,7 @@ const ContactInfoItem = ({ children, icon, title }) => (
   </li>
 )
 
-const Contact = forwardRef(({ id }, ref) => {
+const Contact = forwardRef(({ id, screenSize }, ref) => {
   const [formMessage, setformMessage] = useState('')
   const formRef = useRef(null)
 
@@ -51,7 +51,16 @@ const Contact = forwardRef(({ id }, ref) => {
   }
 
   return (
-    <Parallax bgImage='/assets/images/parallax-contact.jpg' strength={500}>
+    <Parallax
+      bgImage={
+        screenSize === 'lg'
+          ? '/assets/images/parallax-contact.jpg'
+          : screenSize === 'md'
+          ? '/assets/images/parallax-contact-medium.jpg'
+          : '/assets/images/parallax-contact-small.jpg'
+      }
+      strength={500}
+    >
       <div ref={ref} className='section-container py-0' id={id}>
         <div className='dark-overlay pt-20 pb-16 lg:py-24 md:py-18'>
           <div className='centered-container'>

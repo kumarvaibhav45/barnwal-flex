@@ -7,7 +7,7 @@ const PopupModel = ({ img, title, close, width, height }) => (
       <p className='text-sm pt-2 capitalize md:text-base'>{title}</p>
       <button
         onClick={close}
-        aria-label='popup modal close'
+        aria-label='Close Popup Modal'
         className='text-3xl w-6 h-6 px-0 mb-1 hover:text-orange transition-all duration-100 focus:outline-none'
       >
         &times;

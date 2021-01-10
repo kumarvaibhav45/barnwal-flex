@@ -12,6 +12,7 @@ export default function Map({ smallIcon }) {
         onClick={() => {
           setIsMapOpen(!isMapOpen)
         }}
+        aria-label='Open Map'
       >
         Locate us on map
         <span className='ml-1.5 pt-1 pb-0'>
