@@ -29,10 +29,7 @@ const Header = ({ title, scrolled, visibleSection }) => {
         <div className='mx-4 mt-0.5 flex justify-center items-center transition-all duration-200 ease-linear lg:mt-1'>
           <h1>
             <Link href='/'>
-              <a
-                title={title}
-                className='no-underline text-2xl font-sansBold text-btnOrange font-openSans md:text-3xl lg:text-4xl'
-              >
+              <a className='no-underline text-2xl font-sansBold text-btnOrange font-openSans md:text-3xl lg:text-4xl'>
                 {title}
               </a>
             </Link>
