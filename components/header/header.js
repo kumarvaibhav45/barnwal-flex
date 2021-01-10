@@ -49,6 +49,7 @@ const Header = ({ title, scrolled, visibleSection }) => {
           >
             <Image
               src='/assets/images/icons/bars.svg'
+              alt='Menu Icon'
               width='24'
               height='24'
               className='transition-all duration-200 ease-linear'

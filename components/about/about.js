@@ -15,11 +15,12 @@ const aboutText = {
   card3: {
     heading: 'WE`RE CREATIVE.',
     text:
-      'We believe brands are living things. They need to be nourished. Nurtured. And cared for. That is what we at Moon Advertisement do. We are passionate about creating and fostering brands.',
+      'We believe brands are living things. They need to be nourished, nurtured and cared for. That is what we at Barnwal Flex do. We are passionate about creating and fostering brands.',
   },
   card4: {
     heading: 'ABOUT US',
-    text: `Barnwal Flex was built on the platform of highest quality standards, with the intent of providing world class products and solutions to the printing industry in India. We are one of the undisputed market leader in the printing industry that has transformed the industry from merely utilitarian to inspirational. With the company's vision to evolve in a 'Complete Printing Solution' We have successfully diversified into various Print vertical like Commercial Printing, Publishing, Packaging, Signage, Offset Printing & Digital printing. As a one window solution, we offer wide range of high quality products.`,
+    text:
+      "Barnwal Flex was built on the platform of highest quality standards, with the intent of providing world class products and solutions to the printing industry in India. We are one of the undisputed market leader in the printing industry that has transformed the industry from merely utilitarian to inspirational. With the company's vision to evolve in a 'Complete Printing Solution' We have successfully diversified into various Print vertical like Commercial Printing, Publishing, Packaging, Signage, Offset Printing & Digital printing. As a one window solution, we offer wide range of high quality products.",
   },
 }
 

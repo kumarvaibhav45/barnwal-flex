@@ -1,11 +1,31 @@
-import { useRef, forwardRef } from 'react'
+import { useRef, useEffect, useState, forwardRef } from 'react'
 import Link from 'next/link'
 import Slider from 'react-slick'
 import styles from '../styles/banner.module.css'
 
 const Slide = ({ text, banner, fullBanner }) => {
+  const [visible, setVisible] = useState(false)
+  const sliderRef = useRef(null)
+  useEffect(() => {
+    let options = {
+      root: null,
+      threshold: 0.5,
+    }
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+        }
+      })
+    }
+    const observer = new IntersectionObserver(callback, options)
+    sliderRef.current && observer.observe(sliderRef.current)
+    return () => {
+      sliderRef.current && observer.unobserve(sliderRef.current)
+    }
+  }, [sliderRef])
   return (
-    <div>
+    <div ref={sliderRef} aria-hidden={!visible}>
       <div
         className={`${
           fullBanner ? styles.fullBanner : styles.banner
@@ -51,6 +71,7 @@ const Banner = forwardRef(({ id, fullBanner }, ref) => {
     ),
   }
   const sliderRef = useRef(null)
+
   return (
     <div
       id={id}

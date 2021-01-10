@@ -29,9 +29,9 @@ const MemberCard = ({ img, name, designation, message }) => {
         <h3 className='pb-1 uppercase font-sansBold text-xs sm:text-sm'>
           <span className='pb-1.5 border-b border-orange'>{name}</span>
         </h3>
-        <h6 className='my-2 text-xs font-light sm:text-sm sm:my-2.5 lg:pb-3.5'>
+        <h4 className='my-2 text-xs font-light sm:text-sm sm:my-2.5 lg:pb-3.5'>
           {designation}
-        </h6>
+        </h4>
         <p className='text-xs my-0.5 md:text-sm sm:mx-32 md:mx-auto'>
           {message}
         </p>
